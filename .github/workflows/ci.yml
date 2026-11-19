@@ -43,6 +43,7 @@ jobs:
       - run: cp .env.example .env
       - run: composer install --no-interaction --prefer-dist --no-progress
       - run: php artisan key:generate
+      - run: php artisan migrate --force
       - run: composer ecs
       - run: composer stan
       - run: composer test
